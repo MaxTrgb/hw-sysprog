@@ -10,6 +10,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
 
             int start = (int)numericUpDown1.Value;
             int stop = (int)numericUpDown2.Value;
@@ -25,16 +26,17 @@ namespace WinFormsApp1
             {
                 threads[i] = new Thread(() =>
                 {
-
                     for (int j = start; j <= stop; j++)
                     {
-                        listBox1.Text += j + "\n";
+                        Invoke((Action)(() =>
+                        {
+                            listBox1.Items.Add(j); 
+
+                        }));
                     }
                 });
                 threads[i].Start();
-                threads[i].Join();
             }
         }
-
     }
 }

@@ -82,6 +82,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.ScrollBar;
             panel1.Controls.Add(numericUpDown3);
             panel1.Controls.Add(numericUpDown2);
             panel1.Controls.Add(numericUpDown1);
@@ -116,6 +117,7 @@
             // 
             // listBox1
             // 
+            listBox1.BackColor = SystemColors.ScrollBar;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(444, 12);
